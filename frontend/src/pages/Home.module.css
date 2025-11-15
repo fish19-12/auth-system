@@ -1,0 +1,25 @@
+.hero {
+  display: flex;
+  justify-content: center;
+  padding: 60px 20px;
+}
+.card {
+  background: linear-gradient(
+    180deg,
+    rgba(255, 253, 253, 0.9),
+    rgba(255, 255, 255, 0.7)
+  );
+  padding: 32px;
+  border-radius: 16px;
+  box-shadow: 0 10px 30px rgba(16, 24, 40, 0.06);
+  max-width: 720px;
+}
+.h1 {
+  font-size: 28px;
+  color: #111827;
+  margin: 0 0 10px;
+}
+.p {
+  color: #4b5563;
+  margin: 0;
+}

@@ -1,0 +1,36 @@
+import express from "express";
+import dotenv from "dotenv";
+import mongoose from "mongoose";
+import cors from "cors";
+import authRoutes from "./routes/authRoutes.js";
+
+dotenv.config();
+
+const app = express();
+
+// Middleware
+app.use(express.json());
+app.use(cors());
+
+// Routes
+app.use("/api/auth", authRoutes);
+// Test route
+app.get("/api/test", (req, res) => {
+  res.json({ message: "Backend connected!" });
+});
+
+// Test route
+app.get("/", (req, res) => {
+  res.send("API is running...");
+});
+
+// Database connection
+mongoose
+  .connect(process.env.MONGO_URI)
+  .then(() => console.log("mongoDB connected"))
+  .catch((err) => console.log(err));
+
+// Server
+app.listen(5000, () => {
+  console.log("server is running ");
+});

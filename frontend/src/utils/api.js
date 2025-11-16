@@ -1,4 +1,4 @@
-const API_URL = "https://auth-backend-uvz5.onrender.com";
+const API_URL = "https://auth-backend-uvz5.onrender.com/api";
 
 // Modern clean POST function
 export const apiPost = async (path, body = {}) => {
@@ -11,7 +11,6 @@ export const apiPost = async (path, body = {}) => {
   return res.json();
 };
 
-// Optional: Classic API object (post/get)
 export const api = {
   post: async (path, body = {}) => {
     const res = await fetch(`${API_URL}${path}`, {

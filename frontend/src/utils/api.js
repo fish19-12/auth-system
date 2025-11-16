@@ -1,4 +1,4 @@
-const API_URL = "https://auth-system-1-ik42.onrender.com/api";
+const API_URL = "https://auth-backend-uvz5.onrender.com";
 
 // Modern clean POST function
 export const apiPost = async (path, body = {}) => {

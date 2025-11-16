@@ -11,6 +11,7 @@ export const apiPost = async (path, body = {}) => {
   return res.json();
 };
 
+// Optional: Classic API object (post/get)
 export const api = {
   post: async (path, body = {}) => {
     const res = await fetch(`${API_URL}${path}`, {

@@ -23,6 +23,10 @@ app.get("/api/test", (req, res) => {
 app.get("/", (req, res) => {
   res.send("API is running...");
 });
+app.get("/api/test", (req, res) => {
+  console.log("GET /api/test called"); // log for Render
+  res.json({ message: "Backend alive" });
+});
 
 // Database connection
 mongoose

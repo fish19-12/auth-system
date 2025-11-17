@@ -1,33 +1,43 @@
-# Auth System
 
-A modern **MERN stack** user authentication system with secure login, registration, and protected routes.
 
----
-
-## Features
-
-- **User Registration:** Securely create new accounts.
-- **User Login:** Authenticate with email and password.
-- **Protected Routes:** Only authenticated users can access certain pages.
-- **Password Security:** Passwords are hashed before storage.
-- **Modern UI/UX:** Clean and responsive design for both desktop and mobile.
+A modern **MERN authentication system** with secure login and registration functionality. Users can sign up, log in, and access protected routes after authentication. This project demonstrates full-stack development using **MongoDB, Express, React, and Node.js**.
 
 ---
 
-## Tech Stack
+## 🌐 Live Demo
 
-- **Frontend:** React.js, Axios, Tailwind CSS (or your styling library)
+Check out the live app here: [My Auth System Live](https://auth-system-git-main-fisehalidetu12-5192s-projects.vercel.app)
+
+![Live Demo](https://img.shields.io/badge/Live-App-brightgreen)
+
+---
+
+## 🛠 Features
+
+- User registration with email and password
+- Secure login with hashed passwords
+- Protected routes accessible only to authenticated users
+- Modern, responsive UI using React
+- Fully functional backend API with Express and MongoDB
+
+---
+
+## 💻 Tech Stack
+
+- **Frontend:** React, Axios, Context API
 - **Backend:** Node.js, Express.js
-- **Database:** MongoDB (local or Atlas)
-- **Authentication:** JWT (JSON Web Tokens)
-- **Version Control:** Git & GitHub
+- **Database:** MongoDB
+- **Deployment:** Vercel (Frontend), Render or Vercel (Backend)
+- **Authentication:** JWT (JSON Web Tokens), bcrypt for password hashing
 
 ---
-
-## Installation
-
-1. **Clone the repository**
+ **Clone the repository**
 ```bash
 git clone https://github.com/fish19-12/auth-system.git
 cd auth-system
+# Auth System
+
+## 📁 Project Structure
+
+
 

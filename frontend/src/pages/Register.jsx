@@ -23,39 +23,34 @@ export default function Register() {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    setMessage("Processing...");
+    setMessage("");
     setLoading(true);
 
     try {
-      // 1️⃣ Call register endpoint
-      const res = await apiPost("/auth/register", form);
+      // ✅ Call register endpoint correctly
+      const res = await apiPost("/register", form);
 
-      if (res?.message) {
-        setMessage(res.message); // show “User registered successfully” or error
+      if (res?.message === "User registered successfully") {
+        setMessage(res.message);
 
-        // 2️⃣ Auto-login after registration
-        try {
-          const loginRes = await apiPost("/auth/login", {
-            email: form.email,
-            password: form.password,
-          });
+        // ✅ Auto-login after registration
+        const loginRes = await apiPost("/login", {
+          email: form.email,
+          password: form.password,
+        });
 
-          if (loginRes?.token) {
-            localStorage.setItem("token", loginRes.token);
-            localStorage.setItem("user", JSON.stringify(loginRes.user));
-            navigate("/dashboard", { replace: true });
-          } else {
-            setMessage(loginRes.message || "Auto-login failed");
-          }
-        } catch (loginErr) {
-          setMessage("Auto-login failed");
-          console.error(loginErr);
+        if (loginRes?.token) {
+          localStorage.setItem("token", loginRes.token);
+          localStorage.setItem("user", JSON.stringify(loginRes.user));
+          navigate("/dashboard", { replace: true });
+        } else {
+          setMessage(loginRes.message || "Auto-login failed");
         }
       } else {
-        setMessage("Registration failed");
+        setMessage(res.message || "Registration failed");
       }
     } catch (err) {
-      setMessage(err.response?.data?.message || "Registration failed");
+      setMessage("Network or server error. Try again.");
       console.error(err);
     }
 

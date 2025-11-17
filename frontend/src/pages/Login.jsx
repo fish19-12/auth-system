@@ -1,4 +1,4 @@
-import { useState, useEffect } from "react";
+import { useState } from "react";
 import MainLayout from "../layouts/MainLayout";
 import Input from "../components/Input";
 import Button from "../components/Button";
@@ -11,17 +11,16 @@ export default function Login() {
   const [form, setForm] = useState({ email: "", password: "" });
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState("");
-  const [redirecting, setRedirecting] = useState(false);
   const navigate = useNavigate();
 
   // Redirect already logged-in users
-  useEffect(() => {
-    const token = localStorage.getItem("token");
-    if (token) {
-      setRedirecting(true);
-      navigate("/dashboard", { replace: true });
-    }
-  }, [navigate]);
+  const token = localStorage.getItem("token");
+  if (token) {
+    return (
+      <p>Redirecting to dashboard...</p> ||
+      navigate("/dashboard", { replace: true })
+    );
+  }
 
   const handleChange = (key) => (e) =>
     setForm((s) => ({ ...s, [key]: e.target.value }));
@@ -31,8 +30,13 @@ export default function Login() {
     setError("");
     setLoading(true);
 
+    // 🔹 Log form data before sending
+    console.log("Login attempt:", form);
+
     try {
-      const res = await apiPost("/auth/login", form);
+      const res = await apiPost("/login", form);
+
+      console.log("Backend response:", res);
 
       if (res.token) {
         // Save token and user info
@@ -43,13 +47,12 @@ export default function Login() {
         setError(res.message || "Invalid credentials");
       }
     } catch (err) {
+      console.error("Network or server error:", err);
       setError("Network error. Try again.");
     }
 
     setLoading(false);
   };
-
-  if (redirecting) return <p>Redirecting to dashboard...</p>; // show while redirecting
 
   return (
     <MainLayout>

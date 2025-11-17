@@ -1,16 +1,39 @@
-# React + Vite
+ # Auth System
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A modern **MERN authentication system** with secure login and registration functionality. Users can sign up, log in, and access protected routes after authentication. This project demonstrates full-stack development using **MongoDB, Express, React, and Node.js**.
 
-Currently, two official plugins are available:
+---
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## 🌐 Live Frontend
 
-## React Compiler
+The frontend is live on Vercel:  
+[My Auth System Live](https://auth-system-git-main-fisehalidetu12-5192s-projects.vercel.app)
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+![Live Demo](https://img.shields.io/badge/Live-App-brightgreen)
 
-## Expanding the ESLint configuration
+> ⚠️ Note: The backend is not yet deployed. Some features (login/register) require the backend API to work.
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+---
+
+## 🛠 Features
+
+- User registration with email and password
+- Secure login with hashed passwords
+- Protected routes accessible only to authenticated users
+- Modern, responsive UI using React
+- Fully functional backend API (to be deployed separately)
+
+---
+
+## 💻 Tech Stack
+
+- **Frontend:** React, Axios, Context API  
+- **Backend:** Node.js, Express.js  
+- **Database:** MongoDB  
+- **Authentication:** JWT, bcrypt for password hashing  
+- **Deployment:** Vercel (Frontend), Render (Backend recommended)
+
+---
+
+## 📁 Project Structure
+

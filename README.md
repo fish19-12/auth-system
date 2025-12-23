@@ -37,7 +37,7 @@ git clone https://github.com/fish19-12/auth-system.git
 cd auth-system
 # Auth System
 
-## 📁 Project Structure
+ 
 
 
 
